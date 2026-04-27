@@ -1,0 +1,25 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function ownsUserPath(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    match /users/{userId} {
+      allow read, write: if ownsUserPath(userId);
+
+      match /media/{mediaId} {
+        allow read, write: if ownsUserPath(userId);
+      }
+
+      match /jobs/{jobId} {
+        allow read, write: if ownsUserPath(userId);
+      }
+    }
+  }
+}

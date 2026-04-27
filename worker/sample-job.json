@@ -1,0 +1,8 @@
+{
+  "user_id": "local-user",
+  "media_id": "media-1",
+  "job_id": "job-1",
+  "storage_path": "users/local-user/media/media-1/demo.mp4",
+  "mime_type": "video/mp4",
+  "stages": ["uploaded"]
+}
