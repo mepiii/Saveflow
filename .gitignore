@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+worker/.venv/
+worker/*.egg-info/
+worker/**/__pycache__/
+
+# next
+.next/
+out/
+next-env.d.ts
+
+# firebase init extras
+404.html
+index.html
+database.rules.json
+dataconnect/
+
+# test output
+coverage/
+playwright-report/
+test-results/
+
+# local env
+.env
+.env*.local
+
+# claude local state
+.claude/
+.tldr/
+thoughts/
+.vercel

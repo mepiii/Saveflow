@@ -1,0 +1,23 @@
+[project]
+name = "saveflow-worker"
+version = "0.1.0"
+description = "Local SaveFlow media processing worker"
+requires-python = ">=3.11"
+dependencies = [
+  "firebase-admin==7.1.0",
+  "pydantic==2.12.5",
+  "typer==0.20.0",
+  "uvicorn==0.38.0",
+  "fastapi==0.124.2"
+]
+
+[project.optional-dependencies]
+ml = [
+  "faster-whisper==1.2.1"
+]
+
+[project.scripts]
+saveflow-worker = "saveflow_worker.main:app"
+
+[tool.ruff]
+line-length = 100
